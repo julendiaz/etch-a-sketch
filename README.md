@@ -41,26 +41,49 @@ I wanted to build a project that resembles some of the nowadays software interfa
 ### Understand the problem
 
 - How are we going to create the grid with javascript?
-  - Create grid-container in html
-  - Select grid-container in javascript
-  - Create a variable for pixel size = 16;
-  - Create function for creating a div and append it to the grid-container
-  - Use a for loop to create and push those grids inside the grid-container
-    - Append divs into the grid until (pixel size \* pixel size);
-- How are we going to arrange div's as a grid?
-  - Let's try with flex-box wrap
-- How are we going to create the hover effect?
-  - how to create an event listener for hovering?
-    - With "mouseover"
+- Methods for arranging div's as a grid?
+- Is there a simple way of listening to the hover effect?
+  - How to create an event listener for hovering?
   - How to create an event listener for when the mouse leaves?
 - How to change the color of the divs?
-  - Using classes and adding them each time the event happens
 - How to make the rainbow brush?
-  - Create a function that adds 3 random numbers between 0 and 255, and add those values with a template literal to the background-color of a class "rainbow"
+- Are margins and borders going to be a problem when appending the squares?
 
 ### Pseudocode
 
+```
+Select the grid-container with DOM
+Select eachSquare with classSelectorAll
+select clear button
+Create a variable for pixelSize and assign it a value
+Create newSquare function for creating each square and append it to grid container
+    Create each square with createElement
+    Assign it the class eachSquare
+    Append this newSquare to grid-container
+Create a function for rainbow colors
+    Create an empty array for storing the three values
+    Create a for loop until 3 values
+        Create an equation for random values between 0 and 255
+        Push each random value to the array
+    return the array
+Function for fillCanvas
+    Create loop for inserting eachSquare until pixel size(pixelSize value * pixelSize value)
+        Invoke newSquare function
+Foreach newSquare (square)
+    create an eventListener with mouseover
+        square. add class of color to it for the trail
+Create a function for clearing the canvas
+    Add an event listener for clear button
+        foreach newSquare
+            add class of white
+        prompt alert asking for a new pixelSize value
+            pixelSize value is equal to user answer
+    invoke fillCanvas again with the new pixelSize value
+```
+
 ## Useful Sources
+
+- [Mouseover event listener](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event);
 
 ## Additional Improvements
 
