@@ -48,6 +48,8 @@ I wanted to build a project that resembles some of the nowadays software interfa
 - How to change the color of the divs?
 - How to make the rainbow brush?
 - Are margins and borders going to be a problem when appending the squares?
+- How can we use the grid method to append each square?
+- How to delete all child elements with the DOM?
 
 ### Pseudocode
 
@@ -84,6 +86,10 @@ Create a function for clearing the canvas
 ## Useful Sources
 
 - [Mouseover event listener](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event);
+- [Methods for squaring a number](<https://www.delftstack.com/howto/javascript/javascript-square-a-number/#:~:text=Use%20the%20Math.,-pow()%20Method&text=One%20way%20to%20square%20a,to%20multiply%20it%20by%20itself.>)
+- [forEach method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
+- [How to use prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
+- [How to delete all child elements with the DOM](https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript)
 
 ## Additional Improvements
 
