@@ -90,8 +90,13 @@ Create a function for clearing the canvas
 - [forEach method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
 - [How to use prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
 - [How to delete all child elements with the DOM](https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript)
+- [How to get a random Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 
 ## Additional Improvements
+
+- [ ] Change the image of the cursor to rainbow, brush or eraser
+- [ ] Add a color picker
+- [ ] Add a pixelSize bar so the traditional prompt doesn't appear
 
 ## Attribution
 
