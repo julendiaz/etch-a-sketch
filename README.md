@@ -91,6 +91,7 @@ Create a function for clearing the canvas
 - [How to use prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt)
 - [How to delete all child elements with the DOM](https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript)
 - [How to get a random Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [Video tutorial on how the grid system works](https://www.youtube.com/watch?v=jV8B24rSN5o)
 
 ## Additional Improvements
 
