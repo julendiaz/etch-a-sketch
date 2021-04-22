@@ -1,4 +1,4 @@
-# Rock Paper Scissors - TOP + Front-End Mentor
+# Etch-a-Sketch | The Odin Project
 
 <!-- ![Frame 1portadagithub](https://user-images.githubusercontent.com/66780327/115557714-475ba980-a2b2-11eb-870c-5dd59aa5517f.png) -->
 
@@ -12,7 +12,7 @@ Go to the [Live Preview](#);
 - [My process](#my-process)
   - [Understand the problem](#understand-the-problem)
   - [Pseudocode](#pseudocode)
-- [Useful sources](#useful-sources)
+  - [Useful sources](#useful-sources)
 - [Additional Improvements](#additional-improvements)
 - [Attribution](#attribution)
 - [Contact](#contact)
@@ -83,7 +83,7 @@ Create a function for clearing the canvas
     invoke fillCanvas again with the new pixelSize value
 ```
 
-## Useful Sources
+### Useful Sources
 
 - [Mouseover event listener](https://developer.mozilla.org/en-US/docs/Web/API/Element/mouseover_event);
 - [Methods for squaring a number](<https://www.delftstack.com/howto/javascript/javascript-square-a-number/#:~:text=Use%20the%20Math.,-pow()%20Method&text=One%20way%20to%20square%20a,to%20multiply%20it%20by%20itself.>)
@@ -96,8 +96,11 @@ Create a function for clearing the canvas
 ## Additional Improvements
 
 - [ ] Change the image of the cursor to rainbow, brush or eraser
+- [ ] Solve hover and focus btn while selecting and painting
+- [ ] Make the prompt only with a number between 1 and 81
 - [ ] Add a color picker
-- [ ] Add a pixelSize bar so the traditional prompt doesn't appear
+- [ ] Add a pixelSize bar slide
+- [ ] Be able to export the current canvas
 
 ## Attribution
 

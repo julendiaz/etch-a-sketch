@@ -9,22 +9,35 @@
     <link rel="stylesheet" href="css/reset.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Typography -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <header>
         <div id="header-nav">
-            <button class="btn" id="btn-rainbow">Rainbow</button>
-            <button class="btn" id="btn-brush">Brush</button>
-            <button class="btn" id="btn-eraser">Eraser</button>
+            <button class="btn" id="btn-rainbow"><img src="/images/rainbow.png" alt="rainbow icon"></button>
+            <button class="btn" id="btn-brush"><img src="/images/paintbrush.png" alt="brush icon"></button>
+            <button class="btn" id="btn-eraser"><img src="/images/eraser.png" alt="eraser icon"></button>
         </div>
     </header>
     <main>
-        <div id="grid-container"></div>
-        <div id="side-nav">
-            <button class="btn" id="btn-clear">Clear</button>
+        <div id="main-container">
+            <div id="credits-nav"></div>
+            <div id="grid-container"></div>
+            <div id="side-nav">
+                <button class="btn" id="btn-clear">Clear</button>
+            </div>
         </div>
+        
     </main>
-    <footer></footer>
+    <footer>
+        <div id="credits">
+            <h1>etch-a-sketch</h1>
+            <h6>by julen diaz</h6>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
