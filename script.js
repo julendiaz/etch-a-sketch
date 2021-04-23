@@ -65,9 +65,6 @@ let promptMessage = function (text) {
 
 // Clear Canvas
 btnClear.addEventListener("click", function() {
-    eachSquare.forEach( function (element) {
-        element.style.backgroundColor = "white";
-    })
     promptMessage("Please enter a new Canvas size");
     gridContainer.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
     while (gridContainer.firstChild) {

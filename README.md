@@ -14,6 +14,10 @@ Go to the [Live Preview](#);
   - [Pseudocode](#pseudocode)
   - [Mindmap](#mindmap)
   - [Useful sources](#useful-sources)
+- [Approaches](#approaches)
+  - [Fill Canvas](#fill-canvas)
+  - [Clear Canvas](#clear-canvas)
+  - [Rainbow Brush](#rainbow-brush)
 - [Additional Improvements](#additional-improvements)
 - [Attribution](#attribution)
 - [Contact](#contact)
@@ -103,6 +107,94 @@ After finishing up the pseudocode method, I thought that some parts were a bit c
 - [How to delete all child elements with the DOM](https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript)
 - [How to get a random Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 - [Video tutorial on how the grid system works](https://www.youtube.com/watch?v=jV8B24rSN5o)
+
+## Approaches
+
+### Fill Canvas
+
+Being the main feature of the sketchpad, I thought that it was going to be more troublesome. Nevertheless, with the aim of the pseudocode and a deep research into the grid system, I could easily implement this feature.
+
+First I had to build a kind of Square Constructor. In future improvements, I would like to try re-writing this part with object-oriented programming, but for now, let's stick with Vanilla. Inside this constructor, I create each square with dom manipulation and append one single square to the parent grid-container.
+
+```javascript
+// Square constructor
+let newSquare = function () {
+  const singleSquare = document.createElement("div");
+  singleSquare.classList.add("square");
+  singleSquare.style.backgroundColor = "white";
+  // Paint or erase each square
+  singleSquare.addEventListener("mouseover", function () {
+    if (rainbow) {
+      singleSquare.style.backgroundColor = randomRainbow();
+    } else if (eraser) {
+      singleSquare.style.backgroundColor = "white";
+    } else {
+      singleSquare.style.backgroundColor = brushColor;
+    }
+  });
+  //  Append each newSquare to grid-container
+  gridContainer.appendChild(singleSquare);
+};
+```
+
+As you can see, I also applied the "mouseover" function in order to listen for each of the selected brushes. After this function, I just had to make a for loop until we could fill the entire grid-container. For this matter, I used math.pow so I could be sure that it was going to be exact.
+
+```javascript
+let fillCanvas = (pixelSize) => {
+  //  Create loop for filling up all the canvas with squares
+  for (let i = 0; i < Math.pow(pixelSize, 2); i++) {
+    newSquare();
+  }
+};
+fillCanvas(30);
+```
+
+As a final step, I just needed to be sure that the grid-container was displayed as a grid, and had the grid-template-column rule to repeat().
+
+```css
+#grid-container {
+  width: 500px;
+  height: 500px;
+  background-color: white;
+  margin-top: 2em;
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
+}
+```
+
+### Clear Canvas
+
+This problem came out to be much more difficult than expected. First, I had to call a prompt for asking the user to write down a new canvas size. With that new value, I used a template literal for inserting that new value into the repeat() attribute from the grid css. Then it was time to get rid of all the previously inserted squares. The final step was to callback the fillcavas function with the new canvas size.
+
+```javascript
+// Clear Canvas
+btnClear.addEventListener("click", function () {
+  promptMessage("Please enter a new Canvas size");
+  gridContainer.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.lastChild);
+  }
+  fillCanvas(pixelSize);
+});
+```
+
+### Rainbow Brush
+
+One of the optional features that The Odin Project moderators asked for was adding a kind of rainbow brush. So each time the cursor touches a new square, a random rgb value fills this square. So it was as simple as making a for loop to add a random value into an empty array. Then, using a template literal to get each of those random values stored in the array.
+
+```javascript
+// Create a random rgb values
+let randomRainbow = function () {
+  let rainbowArr = [];
+  for (let i = 0; i < 3; i++) {
+    rainbowArr.push(Math.floor(Math.random() * 256));
+  }
+  return `rgb(${rainbowArr[0]}, ${rainbowArr[1]}, ${rainbowArr[2]})`;
+};
+```
+
+As you can see in the square constructor a few approaches above, I used this function when the rainbow variable (When the rainbow brush is selected) is set to true.
 
 ## Additional Improvements
 
