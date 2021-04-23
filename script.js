@@ -6,6 +6,7 @@ const btnRainbow = document.querySelector("#btn-rainbow");
 const btnBrush = document.querySelector("#btn-brush");
 const btnEraser = document.querySelector("#btn-eraser");
 const eachSquare = document.querySelectorAll(".square");
+const allBtns = document.querySelectorAll(".btn");
 
 // Initial values
 let pixelSize = 30;
@@ -48,29 +49,77 @@ let fillCanvas = (pixelSize) => {
 }
 fillCanvas(30);
 
-// Event Listeners 
-btnRainbow.addEventListener("click", function () {
-    rainbow = true;
-})
+let promptMessage = function (text) {
+    let newPixelSize = parseInt(window.prompt(text, ""));
+    if(text == '' ){
+        text = "Please enter a number from 3 to 81";   
+    } else if (newPixelSize <= 81 && newPixelSize >= 3) {
+        pixelSize = newPixelSize;
+    } else if (isNaN(newPixelSize)) {
+        promptMessage("That's not a number my friend. Please enter a digit from 3 to 81", "");
+    } else {
+        promptMessage("Oops! Your number (" + newPixelSize + ") is not between 3 and 81", "");
+    }
+}
 
-btnBrush.addEventListener("click", function () {
-    rainbow = false;
-    eraser = false;
-})
 
-btnEraser.addEventListener("click", function () {
-    rainbow = false;
-    eraser = true;
-})
-
+// Clear Canvas
 btnClear.addEventListener("click", function() {
     eachSquare.forEach( function (element) {
         element.style.backgroundColor = "white";
     })
-    let pixelSize = prompt("Please pick a new size for the canvas");
+    promptMessage("Please enter a new Canvas size");
     gridContainer.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
     while (gridContainer.firstChild) {
         gridContainer.removeChild(gridContainer.lastChild);
       }
     fillCanvas(pixelSize);
+})
+
+// Hovering effects for brush buttons
+allBtns.forEach(button => {
+    button.addEventListener("mouseenter", function (e) {
+        if (button.classList.contains("selected")) {
+            button.style.backgroundColor = "#333d4d";
+        } else {
+            e.target.style.backgroundColor = "#3e495a";
+        }
+    })
+    button.addEventListener("mouseleave", function (e){
+        if (button.classList.contains("selected")) {
+            button.style.backgroundColor = "#333d4d";
+        } else {
+            e.target.style.backgroundColor = "#505d72";
+        }
+    })
+})
+
+// Event Listeners 
+btnRainbow.addEventListener("click", function () {
+    rainbow = true;
+    btnRainbow.classList.add("selected");
+    btnBrush.classList.remove("selected");
+    btnEraser.classList.remove("selected");
+    btnBrush.style.backgroundColor = "#505d72";
+    btnEraser.style.backgroundColor = "#505d72";
+})
+
+btnBrush.addEventListener("click", function () {
+    rainbow = false;
+    eraser = false;
+    btnBrush.classList.add("selected");
+    btnRainbow.classList.remove("selected");
+    btnEraser.classList.remove("selected");
+    btnRainbow.style.backgroundColor = "#505d72";
+    btnEraser.style.backgroundColor = "#505d72";
+})
+
+btnEraser.addEventListener("click", function () {
+    rainbow = false;
+    eraser = true;
+    btnEraser.classList.add("selected");
+    btnBrush.classList.remove("selected");
+    btnRainbow.classList.remove("selected");
+    btnBrush.style.backgroundColor = "#505d72";
+    btnRainbow.style.backgroundColor = "#505d72";
 })

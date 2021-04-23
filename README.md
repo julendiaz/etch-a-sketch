@@ -96,8 +96,9 @@ Create a function for clearing the canvas
 ## Additional Improvements
 
 - [ ] Change the image of the cursor to rainbow, brush or eraser
-- [ ] Solve hover and focus btn while selecting and painting
-- [ ] Make the prompt only with a number between 1 and 81
+- [x] Solve hover and focus btn while selecting and painting
+- [ ] Come up with a cleaner solution for hovering brushes feature
+- [x] Make the prompt only with a number between 1 and 81
 - [ ] Add a color picker
 - [ ] Add a pixelSize bar slide
 - [ ] Be able to export the current canvas

@@ -9,7 +9,7 @@ header {
   width: 12em;
   height: 3.3em;
   background-color: #505d72;
-  margin: 2em auto 0 auto;
+  margin: 3.3em auto 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,16 +26,30 @@ header {
   width: 33.3%;
   height: 100%;
   cursor: pointer;
-  background-color: transparent;
+  /* background-color: transparent; */
   border: none;
 }
 
-#header-nav button:hover {
+/* #header-nav button:hover {
   background-color: #3e495a;
+} */
+
+#btn-rainbow {
+  background-color: #505d72;
+}
+
+#btn-eraser {
+  background-color: #505d72;
+}
+#btn-brush {
+  background-color: #333d4d;
+}
+
+.selected {
+  background-color: #333d4d;
 }
 
 #header-nav button:focus {
-  background-color: #333d4d;
   outline: none;
 }
 
