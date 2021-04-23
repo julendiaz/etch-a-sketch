@@ -8,7 +8,6 @@ Go to the [Live Preview](https://shifujulen.github.io/etch-a-sketch/);
 
 - [Overview](#overview)
 - [The challenge](#the-challenge)
-- [Screenshots](#screenshots)
 - [My process](#my-process)
   - [Understand the problem](#understand-the-problem)
   - [Pseudocode](#pseudocode)
@@ -36,8 +35,6 @@ I wanted to build a project that resembles some of the nowadays software interfa
 - [x] Add a Rainbow feature for colorful painting
 - [x] Implement the Figma Design
 - [x] Have fun
-
-## Screenshots
 
 ## My Process
 
