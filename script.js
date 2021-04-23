@@ -76,7 +76,7 @@ btnClear.addEventListener("click", function() {
     fillCanvas(pixelSize);
 })
 
-// Hovering effects for brush buttons
+// Hovering effects for brush buttons (Need to clean up)
 allBtns.forEach(button => {
     button.addEventListener("mouseenter", function (e) {
         if (button.classList.contains("selected")) {
@@ -94,7 +94,6 @@ allBtns.forEach(button => {
     })
 })
 
-// Event Listeners 
 btnRainbow.addEventListener("click", function () {
     rainbow = true;
     btnRainbow.classList.add("selected");

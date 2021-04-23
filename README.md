@@ -12,6 +12,7 @@ Go to the [Live Preview](#);
 - [My process](#my-process)
   - [Understand the problem](#understand-the-problem)
   - [Pseudocode](#pseudocode)
+  - [Mindmap](#mindmap)
   - [Useful sources](#useful-sources)
 - [Additional Improvements](#additional-improvements)
 - [Attribution](#attribution)
@@ -25,12 +26,12 @@ I wanted to build a project that resembles some of the nowadays software interfa
 
 ## The Challenge
 
-- [ ] Build a browser version of etch-a-sketch
-- [ ] Put in practice those googling skills
-- [ ] Set up the 'hovering' effect in the grid
-- [ ] Add a Rainbow feature for colorful painting
-- [ ] Implement the Figma Design
-- [ ] Have fun
+- [x] Build a browser version of etch-a-sketch
+- [x] Put in practice those googling skills
+- [x] Set up the 'hovering' effect in the grid
+- [x] Add a Rainbow feature for colorful painting
+- [x] Implement the Figma Design
+- [x] Have fun
 
 ## Screenshots
 
@@ -52,6 +53,8 @@ I wanted to build a project that resembles some of the nowadays software interfa
 - How to delete all child elements with the DOM?
 
 ### Pseudocode
+
+After reading the first chapter of the book "Think like a programmer", I wanted to put in practice that philosophy of "Always have a plan". For this purpose, I spend a few hours researching and thinking about the best way to implement each feature in plain english.
 
 ```
 Select the grid-container with DOM
@@ -82,6 +85,14 @@ Create a function for clearing the canvas
             pixelSize value is equal to user answer
     invoke fillCanvas again with the new pixelSize value
 ```
+
+Obviously, after coding for a while, I had to re-arrange blocks and come up with solutions for a few other problems. Overall, it really helped me with speeding up the workflow.
+
+### Mindmap
+
+After finishing up the pseudocode method, I thought that some parts were a bit confusing to digest for my current level. That's why I tried to express each solution and function into a simple mindmap. This way I could visualize all the co-relations between variables and organize all of the ideas.
+
+![Mindmap](images/mindmap.png)
 
 ### Useful Sources
 
