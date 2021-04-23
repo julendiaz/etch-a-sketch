@@ -206,6 +206,7 @@ As you can see in the square constructor a few approaches above, I used this fun
 ## Attribution
 
 - Designed and Developed by Julen Diaz
+- Icons by freepik
 
 ## Contact
 
