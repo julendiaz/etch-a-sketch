@@ -195,7 +195,6 @@ As you can see in the square constructor a few approaches above, I used this fun
 
 ## Additional Improvements
 
-- [ ] Change the image of the cursor to rainbow, brush or eraser
 - [x] Solve hover and focus btn while selecting and painting
 - [ ] Come up with a cleaner solution for hovering brushes feature
 - [x] Make the prompt only with a number between 1 and 81

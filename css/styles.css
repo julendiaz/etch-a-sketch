@@ -26,27 +26,12 @@ header {
   width: 33.3%;
   height: 100%;
   cursor: pointer;
-  /* background-color: transparent; */
+  background-color: #505d72;
   border: none;
 }
 
-/* #header-nav button:hover {
+#header-nav button:hover {
   background-color: #3e495a;
-} */
-
-#btn-rainbow {
-  background-color: #505d72;
-}
-
-#btn-eraser {
-  background-color: #505d72;
-}
-#btn-brush {
-  background-color: #333d4d;
-}
-
-.selected {
-  background-color: #333d4d;
 }
 
 #header-nav button:focus {
@@ -55,6 +40,9 @@ header {
 
 .btn img {
   width: 40%;
+}
+
+.inverted {
   filter: invert();
 }
 
@@ -75,18 +63,6 @@ header {
   display: grid;
   grid-template-columns: repeat(30, 1fr);
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
-}
-
-.rainbow-cursor {
-  cursor: url("/images/rainbow-cursor.png"), pointer;
-}
-
-.paint-cursor {
-  cursor: url("/images/paint-cursor.png"), pointer;
-}
-
-.eraser-cursor {
-  cursor: url("/images/eraser-cursor.png"), pointer;
 }
 
 #side-nav {

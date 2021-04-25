@@ -7,18 +7,19 @@ const btnBrush = document.querySelector("#btn-brush");
 const btnEraser = document.querySelector("#btn-eraser");
 const eachSquare = document.querySelectorAll(".square");
 const allBtns = document.querySelectorAll(".btn");
+const imgRainbow = document.querySelector("#rainbow-img");
+const imgPaint = document.querySelector("#paint-img");
+const imgEraser = document.querySelector("#eraser-img");
+const allIcons = document.querySelectorAll(".icon");
 
 // Initial values
 let pixelSize = 30;
 let brushColor = "black";
 let rainbow = false;
 let eraser = false;
+let btnSelector = "";
 
-// Change the image of the cursor
-let changeCursor = function () {
-  if (rainbow) {
-  }
-};
+// ---------- FUNCTIONS ------------//
 
 // Create a random rgb values
 let randomRainbow = function () {
@@ -34,6 +35,7 @@ let newSquare = function () {
   const singleSquare = document.createElement("div");
   singleSquare.classList.add("square");
   singleSquare.style.backgroundColor = "white";
+  singleSquare.style.border = "1px solid #d6d8dd53";
   singleSquare.addEventListener("mouseover", function () {
     if (rainbow) {
       singleSquare.style.backgroundColor = randomRainbow();
@@ -74,6 +76,8 @@ let promptMessage = function (text) {
   }
 };
 
+// ------------ EVENT LISTENERS ------------- //
+
 // Clear Canvas
 btnClear.addEventListener("click", function () {
   promptMessage("Please enter a new Canvas size");
@@ -84,58 +88,35 @@ btnClear.addEventListener("click", function () {
   fillCanvas(pixelSize);
 });
 
-// Hovering effects for brush buttons (Need to clean up)
-allBtns.forEach((button) => {
-  button.addEventListener("mouseenter", function (e) {
-    if (button.classList.contains("selected")) {
-      button.style.backgroundColor = "#333d4d";
-    } else {
-      e.target.style.backgroundColor = "#3e495a";
-    }
-  });
-  button.addEventListener("mouseleave", function (e) {
-    if (button.classList.contains("selected")) {
-      button.style.backgroundColor = "#333d4d";
-    } else {
-      e.target.style.backgroundColor = "#505d72";
-    }
-  });
-});
-
+// Style each brush icon
 btnRainbow.addEventListener("click", function () {
   rainbow = true;
-  gridContainer.classList.add("rainbow-cursor");
-  gridContainer.classList.remove("paint-cursor");
-  gridContainer.classList.remove("eraser-cursor");
-  btnRainbow.classList.add("selected");
-  btnBrush.classList.remove("selected");
-  btnEraser.classList.remove("selected");
-  btnBrush.style.backgroundColor = "#505d72";
-  btnEraser.style.backgroundColor = "#505d72";
+  imgRainbow.src = "images/rainbow-color.png";
+  imgPaint.src = "images/paint.png";
+  imgEraser.src = "images/eraser.png";
+  imgRainbow.style.filter = "none";
+  imgPaint.style.filter = "invert()";
+  imgEraser.style.filter = "invert()";
 });
 
 btnBrush.addEventListener("click", function () {
   rainbow = false;
   eraser = false;
-  gridContainer.classList.add("paint-cursor");
-  gridContainer.classList.remove("rainbow-cursor");
-  gridContainer.classList.remove("eraser-cursor");
-  btnBrush.classList.add("selected");
-  btnRainbow.classList.remove("selected");
-  btnEraser.classList.remove("selected");
-  btnRainbow.style.backgroundColor = "#505d72";
-  btnEraser.style.backgroundColor = "#505d72";
+  imgRainbow.src = "images/rainbow.png";
+  imgPaint.src = "images/paint-color.png";
+  imgEraser.src = "images/eraser.png";
+  imgPaint.style.filter = "none";
+  imgRainbow.style.filter = "invert()";
+  imgEraser.style.filter = "invert()";
 });
 
 btnEraser.addEventListener("click", function () {
   rainbow = false;
   eraser = true;
-  gridContainer.classList.remove("paint-cursor");
-  gridContainer.classList.remove("rainbow-cursor");
-  gridContainer.classList.add("eraser-cursor");
-  btnEraser.classList.add("selected");
-  btnBrush.classList.remove("selected");
-  btnRainbow.classList.remove("selected");
-  btnBrush.style.backgroundColor = "#505d72";
-  btnRainbow.style.backgroundColor = "#505d72";
+  imgRainbow.src = "images/rainbow.png";
+  imgPaint.src = "images/paint.png";
+  imgEraser.src = "images/eraser-color.png";
+  imgEraser.style.filter = "none";
+  imgPaint.style.filter = "invert()";
+  imgRainbow.style.filter = "invert()";
 });
