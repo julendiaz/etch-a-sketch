@@ -77,6 +77,18 @@ header {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
+.rainbow-cursor {
+  cursor: url("images/rainbow-cursor.png"), pointer;
+}
+
+.paint-cursor {
+  cursor: url("images/paint-cursor.png"), pointer;
+}
+
+.eraser-cursor {
+  cursor: url("images/eraser-cursor.png"), pointer;
+}
+
 #side-nav {
   width: 12em;
   height: 100%;

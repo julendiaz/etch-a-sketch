@@ -202,6 +202,7 @@ As you can see in the square constructor a few approaches above, I used this fun
 - [ ] Add a color picker
 - [ ] Add a pixelSize bar slide
 - [ ] Be able to export the current canvas
+- [ ] Design your own icons
 
 ## Attribution
 
