@@ -71,18 +71,19 @@ header {
   width: 18em;
   height: 18em;
   margin-top: 2em;
-  background-color: yellow;
   display: flex;
   justify-content: right;
   flex-wrap: wrap;
 }
 
 #other-colors {
-  background-color: pink;
-  width: 15em;
-  height: 9em;
-  position: absolute;
-  right: 0;
+  width: 10em;
+  height: 6em;
+  margin-left: 2.6em;
+  cursor: pointer;
+  margin-top: 0em;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #btn-clear {
@@ -93,8 +94,8 @@ header {
   outline: none;
   border: none;
   cursor: pointer;
-  margin-top: 2.36em;
-  margin-left: 2.3em;
+  margin-top: -5em;
+  margin-left: 2.6em;
   font-family: "Nunito", sans-serif;
   font-size: 1em;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;

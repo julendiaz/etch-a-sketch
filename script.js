@@ -11,6 +11,7 @@ const imgRainbow = document.querySelector("#rainbow-img");
 const imgPaint = document.querySelector("#paint-img");
 const imgEraser = document.querySelector("#eraser-img");
 const allIcons = document.querySelectorAll(".icon");
+const otherColors = document.querySelector("#other-colors");
 
 // Initial values
 let pixelSize = 30;
@@ -19,10 +20,12 @@ let rainbow = false;
 let eraser = false;
 let btnSelector = "";
 
-// Style Icon Hover
-btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
-imgPaint.classList.add("selected");
-
+// Style Initial Default Brush Icon
+let initialBrush = function () {
+  btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
+  imgPaint.classList.add("selected");
+};
+initialBrush();
 // ---------- FUNCTIONS ------------//
 
 // Create a random rgb values
@@ -33,6 +36,49 @@ let randomRainbow = function () {
   }
   return `rgb(${rainbowArr[0]}, ${rainbowArr[1]}, ${rainbowArr[2]})`;
 };
+
+// Other colors constructor
+let moreColors = function () {
+  let colorsArr = [
+    "#222222",
+    "#545454",
+    "#939393",
+    "#D2D2D2",
+    "#FFFFFF",
+    "#C34141",
+    "#F46A6A",
+    "#D99C41",
+    "#F4BC68",
+    "#FFFA78",
+    "#C246ED",
+    "#D484F1",
+    "#3C68D9",
+    "#6BB5F9",
+    "#90E44E",
+  ];
+  for (let i = 0; i < colorsArr.length; i++) {
+    const newColor = document.createElement("div");
+    newColor.style.width = "2em";
+    newColor.style.height = "2em";
+    newColor.classList.add("picker");
+    newColor.style.backgroundColor = colorsArr[i];
+    otherColors.appendChild(newColor);
+  }
+};
+moreColors();
+
+// Select all of the pickColors
+const picker = document.querySelectorAll(".picker");
+// Listen for a click
+picker.forEach((pick) => {
+  pick.addEventListener("click", function () {
+    brushColor = pick.style.backgroundColor;
+    initialBrush();
+    notMainBrush();
+    rainbow = false;
+    eraser = false;
+  });
+});
 
 // Square constructor
 let newSquare = function () {
@@ -80,6 +126,15 @@ let promptMessage = function (text) {
   }
 };
 
+let notMainBrush = function () {
+  btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
+  btnRainbow.style.borderBottom = "none";
+  btnEraser.style.borderBottom = "none";
+  imgPaint.classList.add("selected");
+  imgEraser.classList.remove("selected");
+  imgRainbow.classList.remove("selected");
+};
+
 // ------------ EVENT LISTENERS ------------- //
 
 // Clear Canvas
@@ -106,12 +161,7 @@ btnRainbow.addEventListener("click", function () {
 btnBrush.addEventListener("click", function () {
   rainbow = false;
   eraser = false;
-  btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
-  btnRainbow.style.borderBottom = "none";
-  btnEraser.style.borderBottom = "none";
-  imgPaint.classList.add("selected");
-  imgEraser.classList.remove("selected");
-  imgRainbow.classList.remove("selected");
+  notMainBrush();
 });
 
 btnEraser.addEventListener("click", function () {
