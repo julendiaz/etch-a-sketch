@@ -17,14 +17,8 @@ let eraser = false;
 // Change the image of the cursor
 let changeCursor = function () {
   if (rainbow) {
-    gridContainer.classList.add("rainbow-cursor");
-  } else if (eraser) {
-    gridContainer.style.cursor = "url('images/eraser-cursor.png'), pointer;";
-  } else {
-    gridContainer.style.cursor = "url('images/paint-cursor.png'), pointer;";
   }
 };
-changeCursor();
 
 // Create a random rgb values
 let randomRainbow = function () {
@@ -43,7 +37,6 @@ let newSquare = function () {
   singleSquare.addEventListener("mouseover", function () {
     if (rainbow) {
       singleSquare.style.backgroundColor = randomRainbow();
-      gridContainer.classList.add("rainbow-cursor");
     } else if (eraser) {
       singleSquare.style.backgroundColor = "white";
     } else {
@@ -111,6 +104,9 @@ allBtns.forEach((button) => {
 
 btnRainbow.addEventListener("click", function () {
   rainbow = true;
+  gridContainer.classList.add("rainbow-cursor");
+  gridContainer.classList.remove("paint-cursor");
+  gridContainer.classList.remove("eraser-cursor");
   btnRainbow.classList.add("selected");
   btnBrush.classList.remove("selected");
   btnEraser.classList.remove("selected");
@@ -121,6 +117,9 @@ btnRainbow.addEventListener("click", function () {
 btnBrush.addEventListener("click", function () {
   rainbow = false;
   eraser = false;
+  gridContainer.classList.add("paint-cursor");
+  gridContainer.classList.remove("rainbow-cursor");
+  gridContainer.classList.remove("eraser-cursor");
   btnBrush.classList.add("selected");
   btnRainbow.classList.remove("selected");
   btnEraser.classList.remove("selected");
@@ -131,6 +130,9 @@ btnBrush.addEventListener("click", function () {
 btnEraser.addEventListener("click", function () {
   rainbow = false;
   eraser = true;
+  gridContainer.classList.remove("paint-cursor");
+  gridContainer.classList.remove("rainbow-cursor");
+  gridContainer.classList.add("eraser-cursor");
   btnEraser.classList.add("selected");
   btnBrush.classList.remove("selected");
   btnRainbow.classList.remove("selected");
