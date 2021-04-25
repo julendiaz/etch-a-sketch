@@ -39,11 +39,13 @@ header {
 }
 
 .btn img {
-  width: 40%;
+  width: 1.5em;
+  height: 1.5em;
+  filter: invert();
 }
 
-.inverted {
-  filter: invert();
+.selected {
+  margin-top: 0.3em;
 }
 
 /* Grid-container */
@@ -66,8 +68,21 @@ header {
 }
 
 #side-nav {
-  width: 12em;
-  height: 100%;
+  width: 18em;
+  height: 18em;
+  margin-top: 2em;
+  background-color: yellow;
+  display: flex;
+  justify-content: right;
+  flex-wrap: wrap;
+}
+
+#other-colors {
+  background-color: pink;
+  width: 15em;
+  height: 9em;
+  position: absolute;
+  right: 0;
 }
 
 #btn-clear {
@@ -90,7 +105,7 @@ header {
 }
 
 #credits-nav {
-  width: 12em;
+  width: 18em;
   height: 100%;
 }
 

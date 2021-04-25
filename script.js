@@ -19,6 +19,10 @@ let rainbow = false;
 let eraser = false;
 let btnSelector = "";
 
+// Style Icon Hover
+btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
+imgPaint.classList.add("selected");
+
 // ---------- FUNCTIONS ------------//
 
 // Create a random rgb values
@@ -91,32 +95,32 @@ btnClear.addEventListener("click", function () {
 // Style each brush icon
 btnRainbow.addEventListener("click", function () {
   rainbow = true;
-  imgRainbow.src = "images/rainbow-color.png";
-  imgPaint.src = "images/paint.png";
-  imgEraser.src = "images/eraser.png";
-  imgRainbow.style.filter = "none";
-  imgPaint.style.filter = "invert()";
-  imgEraser.style.filter = "invert()";
+  btnRainbow.style.borderBottom = "0.3em solid #6CCCF5";
+  imgRainbow.classList.add("selected");
+  imgEraser.classList.remove("selected");
+  imgPaint.classList.remove("selected");
+  btnBrush.style.borderBottom = "none";
+  btnEraser.style.borderBottom = "none";
 });
 
 btnBrush.addEventListener("click", function () {
   rainbow = false;
   eraser = false;
-  imgRainbow.src = "images/rainbow.png";
-  imgPaint.src = "images/paint-color.png";
-  imgEraser.src = "images/eraser.png";
-  imgPaint.style.filter = "none";
-  imgRainbow.style.filter = "invert()";
-  imgEraser.style.filter = "invert()";
+  btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
+  btnRainbow.style.borderBottom = "none";
+  btnEraser.style.borderBottom = "none";
+  imgPaint.classList.add("selected");
+  imgEraser.classList.remove("selected");
+  imgRainbow.classList.remove("selected");
 });
 
 btnEraser.addEventListener("click", function () {
   rainbow = false;
   eraser = true;
-  imgRainbow.src = "images/rainbow.png";
-  imgPaint.src = "images/paint.png";
-  imgEraser.src = "images/eraser-color.png";
-  imgEraser.style.filter = "none";
-  imgPaint.style.filter = "invert()";
-  imgRainbow.style.filter = "invert()";
+  btnEraser.style.borderBottom = "0.3em solid #6CCCF5";
+  btnBrush.style.borderBottom = "none";
+  btnRainbow.style.borderBottom = "none";
+  imgEraser.classList.add("selected");
+  imgPaint.classList.remove("selected");
+  imgRainbow.classList.remove("selected");
 });
