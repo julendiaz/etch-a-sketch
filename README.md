@@ -178,16 +178,12 @@ btnClear.addEventListener("click", function () {
 
 ### Rainbow Brush
 
-One of the optional features that The Odin Project moderators asked for was adding a kind of rainbow brush. So each time the cursor touches a new square, a random rgb value fills this square. So it was as simple as making a for loop to add a random value into an empty array. Then, using a template literal to get each of those random values stored in the array.
+One of the optional features that The Odin Project moderators asked for was adding a kind of rainbow brush. So each time the cursor touches a new square, a random rgb value fills this square. So it was as simple as returning a random value from the colors on the side nav and using a template literal to get that value.
 
 ```javascript
 // Create a random rgb values
 let randomRainbow = function () {
-  let rainbowArr = [];
-  for (let i = 0; i < 3; i++) {
-    rainbowArr.push(Math.floor(Math.random() * 256));
-  }
-  return `rgb(${rainbowArr[0]}, ${rainbowArr[1]}, ${rainbowArr[2]})`;
+  return `${colorsArr[Math.floor(Math.random() * colorsArr.length)]}`;
 };
 ```
 
@@ -198,7 +194,7 @@ As you can see in the square constructor a few approaches above, I used this fun
 - [x] Solve hover and focus btn while selecting and painting
 - [ ] Come up with a cleaner solution for hovering brushes feature
 - [x] Make the prompt only with a number between 1 and 81
-- [ ] Add a color picker
+- [x] Add a color picker
 - [ ] Add a pixelSize bar slide
 - [ ] Be able to export the current canvas
 - [ ] Design your own icons

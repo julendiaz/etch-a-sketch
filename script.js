@@ -19,6 +19,23 @@ let brushColor = "black";
 let rainbow = false;
 let eraser = false;
 let btnSelector = "";
+let colorsArr = [
+  "#222222",
+  "#545454",
+  "#939393",
+  "#D2D2D2",
+  "#FFFFFF",
+  "#C34141",
+  "#F46A6A",
+  "#D99C41",
+  "#F4BC68",
+  "#FFFA78",
+  "#C246ED",
+  "#D484F1",
+  "#3C68D9",
+  "#6BB5F9",
+  "#90E44E",
+];
 
 // Style Initial Default Brush Icon
 let initialBrush = function () {
@@ -30,32 +47,11 @@ initialBrush();
 
 // Create a random rgb values
 let randomRainbow = function () {
-  let rainbowArr = [];
-  for (let i = 0; i < 3; i++) {
-    rainbowArr.push(Math.floor(Math.random() * 256));
-  }
-  return `rgb(${rainbowArr[0]}, ${rainbowArr[1]}, ${rainbowArr[2]})`;
+  return `${colorsArr[Math.floor(Math.random() * colorsArr.length)]}`;
 };
 
 // Other colors constructor
 let moreColors = function () {
-  let colorsArr = [
-    "#222222",
-    "#545454",
-    "#939393",
-    "#D2D2D2",
-    "#FFFFFF",
-    "#C34141",
-    "#F46A6A",
-    "#D99C41",
-    "#F4BC68",
-    "#FFFA78",
-    "#C246ED",
-    "#D484F1",
-    "#3C68D9",
-    "#6BB5F9",
-    "#90E44E",
-  ];
   for (let i = 0; i < colorsArr.length; i++) {
     const newColor = document.createElement("div");
     newColor.style.width = "2em";
