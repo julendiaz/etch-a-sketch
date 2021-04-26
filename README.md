@@ -17,6 +17,7 @@ Go to the [Live Preview](https://shifujulen.github.io/etch-a-sketch/);
   - [Fill Canvas](#fill-canvas)
   - [Clear Canvas](#clear-canvas)
   - [Rainbow Brush](#rainbow-brush)
+  - [More Colors](#more-colors)
 - [Additional Improvements](#additional-improvements)
 - [Attribution](#attribution)
 - [Contact](#contact)
@@ -188,6 +189,45 @@ let randomRainbow = function () {
 ```
 
 As you can see in the square constructor a few approaches above, I used this function when the rainbow variable (When the rainbow brush is selected) is set to true.
+
+### More Colors
+
+After completing the basic features for making the etch-a-sketch work, it was time to start adding some cool ones. In this case, I wanted to create something like a color palette at the side nav so the user could pick one of the few other colors at our disposal.
+
+For this reason, instead of writing them by hand on the html file, I opted for trying to implement them with javascript. This is the code that makes that work.
+
+```javascript
+let colorsArr = [
+  "#222222",
+  "#545454",
+  "#939393",
+  "#D2D2D2",
+  "#FFFFFF",
+  "#C34141",
+  "#F46A6A",
+  "#D99C41",
+  "#F4BC68",
+  "#FFFA78",
+  "#C246ED",
+  "#D484F1",
+  "#3C68D9",
+  "#6BB5F9",
+  "#90E44E",
+];
+let moreColors = function () {
+  for (let i = 0; i < colorsArr.length; i++) {
+    const newColor = document.createElement("div");
+    newColor.style.width = "2em";
+    newColor.style.height = "2em";
+    newColor.classList.add("picker");
+    newColor.style.backgroundColor = colorsArr[i];
+    otherColors.appendChild(newColor);
+  }
+};
+moreColors();
+```
+
+With the use of a simple loop to itinerate through the different color codes from the array, I could easily append them to a common div.
 
 ## Additional Improvements
 
