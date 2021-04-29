@@ -69,11 +69,56 @@ header {
 
 #side-nav {
   width: 18em;
-  height: 18em;
+  height: 21em;
   margin-top: 2em;
   display: flex;
   justify-content: right;
   flex-wrap: wrap;
+}
+
+#color-pick-container {
+  width: 10em;
+  height: 3em;
+  background-color: pink;
+  margin-left: 2.6em;
+  display: flex;
+}
+
+#current-color {
+  width: 7em;
+  height: 3em;
+}
+
+#color-picker {
+  width: 3em;
+  height: 3em;
+ background-color: #afa28d;
+ background-image: url(/images/color-picker.png);
+ background-size: 50%;
+ background-repeat: no-repeat;
+ background-position: center;
+ filter: invert();
+}
+
+#color-picker:hover {
+  background-color: #c1b6a5;
+}
+
+#color-picker input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  cursor: pointer;
+  padding: 0em;
+  color: transparent;
+  appearance: none;
+  -webkit-app
+  display: inline-block;
+  opacity: 0;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
 }
 
 #other-colors {
@@ -81,7 +126,7 @@ header {
   height: 6em;
   margin-left: 2.6em;
   cursor: pointer;
-  margin-top: 0em;
+  margin-top: -5em;
   display: flex;
   flex-wrap: wrap;
 }

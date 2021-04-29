@@ -8,6 +8,7 @@ Go to the [Live Preview](https://shifujulen.github.io/etch-a-sketch/);
 
 - [Overview](#overview)
 - [The challenge](#the-challenge)
+- [Key Features](#key-features)
 - [My process](#my-process)
   - [Understand the problem](#understand-the-problem)
   - [Pseudocode](#pseudocode)
@@ -105,6 +106,7 @@ After finishing up the pseudocode method, I thought that some parts were a bit c
 - [How to delete all child elements with the DOM](https://stackoverflow.com/questions/3955229/remove-all-child-elements-of-a-dom-node-in-javascript)
 - [How to get a random Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 - [Video tutorial on how the grid system works](https://www.youtube.com/watch?v=jV8B24rSN5o)
+- [How to add a color-picker with html](#https://www.educative.io/edpresso/how-to-add-a-color-picker-in-html)
 
 ## Approaches
 

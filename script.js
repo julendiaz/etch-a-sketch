@@ -12,6 +12,8 @@ const imgPaint = document.querySelector("#paint-img");
 const imgEraser = document.querySelector("#eraser-img");
 const allIcons = document.querySelectorAll(".icon");
 const otherColors = document.querySelector("#other-colors");
+const currentColor = document.querySelector("#current-color");
+const colorPicker = document.querySelector("#color-input");
 
 // Initial values
 let pixelSize = 30;
@@ -41,6 +43,7 @@ let colorsArr = [
 let initialBrush = function () {
   btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
   imgPaint.classList.add("selected");
+  currentColor.style.backgroundColor = brushColor;
 };
 initialBrush();
 // ---------- FUNCTIONS ------------//
@@ -69,6 +72,7 @@ const picker = document.querySelectorAll(".picker");
 picker.forEach((pick) => {
   pick.addEventListener("click", function () {
     brushColor = pick.style.backgroundColor;
+    currentColor.style.backgroundColor = brushColor;
     initialBrush();
     notMainBrush();
     rainbow = false;
@@ -169,4 +173,12 @@ btnEraser.addEventListener("click", function () {
   imgEraser.classList.add("selected");
   imgPaint.classList.remove("selected");
   imgRainbow.classList.remove("selected");
+});
+
+colorPicker.addEventListener("change", function (e) {
+  currentColor.style.backgroundColor = e.target.value;
+  brushColor = e.target.value;
+  notMainBrush();
+  rainbow = false;
+  eraser = false;
 });
