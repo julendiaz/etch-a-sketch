@@ -50,7 +50,10 @@ initialBrush();
 
 // Create a random rgb values
 let randomRainbow = function () {
-  return `${colorsArr[Math.floor(Math.random() * colorsArr.length)]}`;
+  // Remove the white color from the rainbow colors arr
+  let rainbowColors = [...colorsArr];
+  rainbowColors.splice(4, 1);
+  return `${rainbowColors[Math.floor(Math.random() * rainbowColors.length)]}`;
 };
 
 // Other colors constructor
