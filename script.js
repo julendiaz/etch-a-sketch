@@ -14,6 +14,7 @@ const allIcons = document.querySelectorAll(".icon");
 const otherColors = document.querySelector("#other-colors");
 const currentColor = document.querySelector("#current-color");
 const colorPicker = document.querySelector("#color-input");
+const pixelRange = document.querySelector("#range");
 
 // Initial values
 let pixelSize = 30;
@@ -110,25 +111,6 @@ let fillCanvas = (pixelSize) => {
 };
 fillCanvas(30);
 
-let promptMessage = function (text) {
-  let newPixelSize = parseInt(window.prompt(text, ""));
-  if (text == "") {
-    text = "Please enter a number from 3 to 81";
-  } else if (newPixelSize <= 81 && newPixelSize >= 3) {
-    pixelSize = newPixelSize;
-  } else if (isNaN(newPixelSize)) {
-    promptMessage(
-      "That's not a number my friend. Please enter a digit from 3 to 81",
-      ""
-    );
-  } else {
-    promptMessage(
-      "Oops! Your number (" + newPixelSize + ") is not between 3 and 81",
-      ""
-    );
-  }
-};
-
 let notMainBrush = function () {
   btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
   btnRainbow.style.borderBottom = "none";
@@ -142,7 +124,6 @@ let notMainBrush = function () {
 
 // Clear Canvas
 btnClear.addEventListener("click", function () {
-  promptMessage("Please enter a new Canvas size");
   gridContainer.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
   while (gridContainer.firstChild) {
     gridContainer.removeChild(gridContainer.lastChild);
@@ -184,4 +165,13 @@ colorPicker.addEventListener("change", function (e) {
   notMainBrush();
   rainbow = false;
   eraser = false;
+});
+
+pixelRange.addEventListener("change", function (e) {
+  pixelSize = e.target.value;
+  gridContainer.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
+  while (gridContainer.firstChild) {
+    gridContainer.removeChild(gridContainer.lastChild);
+  }
+  fillCanvas(pixelSize);
 });

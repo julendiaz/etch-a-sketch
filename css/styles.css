@@ -72,16 +72,34 @@ header {
   height: 21em;
   margin-top: 2em;
   display: flex;
-  justify-content: right;
   flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+#pixel-range {
+  width: 10em;
+  height: 4em;
+  margin-left: 2.6em;
+  margin-top: 0em;
+}
+
+#pixel-range p {
+  margin-bottom: 0.8em;
+  color: #505d72;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+#range {
+  width: 10em;
 }
 
 #color-pick-container {
   width: 10em;
   height: 3em;
-  background-color: pink;
   margin-left: 2.6em;
   display: flex;
+  margin-top: -2em;
 }
 
 #current-color {
@@ -126,7 +144,7 @@ input[type="color"] {
   height: 6em;
   margin-left: 2.6em;
   cursor: pointer;
-  margin-top: -5em;
+  margin-top: -1.8em;
   display: flex;
   flex-wrap: wrap;
 }
@@ -139,7 +157,7 @@ input[type="color"] {
   outline: none;
   border: none;
   cursor: pointer;
-  margin-top: -5em;
+  margin-top: -1.8em;
   margin-left: 2.6em;
   font-family: "Nunito", sans-serif;
   font-size: 1em;
