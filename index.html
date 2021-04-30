@@ -19,8 +19,8 @@
     />
   </head>
   <body>
-    <header>
-      <div id="header-nav">
+    <header class="flex">
+      <div class="flex" id="header-nav">
         <button class="btn" id="btn-rainbow">
           <img
             src="images/rainbow.png"
@@ -48,15 +48,15 @@
       </div>
     </header>
     <main>
-      <div id="main-container">
+      <div class="flex" id="main-container">
         <div id="credits-nav"></div>
         <div id="grid-container"></div>
-        <div id="side-nav">
+        <div class="flex" id="side-nav">
           <div id="pixel-range">
             <p>Pixel Size</p>
             <input type="range" id="range" min="3" max="81" />
           </div>
-          <div id="color-pick-container">
+          <div class="flex" id="color-pick-container">
             <div id="current-color"></div>
             <div id="color-picker">
               <input
@@ -67,13 +67,13 @@
               />
             </div>
           </div>
-          <div id="other-colors"></div>
+          <div class="flex" id="other-colors"></div>
           <button id="btn-clear">Clear</button>
         </div>
       </div>
     </main>
-    <footer>
-      <div id="social-links">
+    <footer class="flex">
+      <div class="flex" id="social-links">
         <a href="https://www.theodinproject.com/" target="_blank"
           ><img id="odin-icon" src="images/odin-icon.png" alt="Odin icon"
         /></a>
