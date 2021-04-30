@@ -2,15 +2,9 @@
 
 const gridContainer = document.querySelector("#grid-container");
 const btnClear = document.querySelector("#btn-clear");
-const btnRainbow = document.querySelector("#btn-rainbow");
-const btnBrush = document.querySelector("#btn-brush");
-const btnEraser = document.querySelector("#btn-eraser");
 const eachSquare = document.querySelectorAll(".square");
-const allBtns = document.querySelectorAll(".btn");
-const imgRainbow = document.querySelector("#rainbow-img");
-const imgPaint = document.querySelector("#paint-img");
-const imgEraser = document.querySelector("#eraser-img");
-const allIcons = document.querySelectorAll(".icon");
+const btns = [...document.querySelectorAll(".btn")];
+const icons = [...document.querySelectorAll(".icon")];
 const otherColors = document.querySelector("#other-colors");
 const currentColor = document.querySelector("#current-color");
 const colorPicker = document.querySelector("#color-input");
@@ -40,14 +34,30 @@ let colorsArr = [
   "#90E44E",
 ];
 
-// Style Initial Default Brush Icon
+//---------- BRUSHES -----------//
+
 let initialBrush = function () {
-  btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
-  imgPaint.classList.add("selected");
+  btns[1].style.borderBottom = "0.3em solid #6CCCF5";
+  icons[1].classList.add("selected");
   currentColor.style.backgroundColor = brushColor;
 };
 initialBrush();
-// ---------- FUNCTIONS ------------//
+
+let chooseMainBrush = function () {
+  clearOtherBrushes();
+  btns[1].style.borderBottom = "0.3em solid #6CCCF5";
+  icons[1].classList.add("selected");
+  rainbow = false;
+  eraser = false;
+};
+
+let clearOtherBrushes = function () {
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].style.borderBottom = "none";
+    icons[i].classList.remove("selected");
+  }
+};
+// ---------- MAIN FUNCTIONS ------------//
 
 // Create a random rgb values
 let randomRainbow = function () {
@@ -78,9 +88,7 @@ picker.forEach((pick) => {
     brushColor = pick.style.backgroundColor;
     currentColor.style.backgroundColor = brushColor;
     initialBrush();
-    notMainBrush();
-    rainbow = false;
-    eraser = false;
+    chooseMainBrush();
   });
 });
 
@@ -90,6 +98,7 @@ let newSquare = function () {
   singleSquare.classList.add("square");
   singleSquare.style.backgroundColor = "white";
   singleSquare.style.border = "1px solid #d6d8dd53";
+  // Check for the brush when the mouse is over
   singleSquare.addEventListener("mouseover", function () {
     if (rainbow) {
       singleSquare.style.backgroundColor = randomRainbow();
@@ -111,15 +120,6 @@ let fillCanvas = (pixelSize) => {
 };
 fillCanvas(30);
 
-let notMainBrush = function () {
-  btnBrush.style.borderBottom = "0.3em solid #6CCCF5";
-  btnRainbow.style.borderBottom = "none";
-  btnEraser.style.borderBottom = "none";
-  imgPaint.classList.add("selected");
-  imgEraser.classList.remove("selected");
-  imgRainbow.classList.remove("selected");
-};
-
 // ------------ EVENT LISTENERS ------------- //
 
 // Clear Canvas
@@ -132,41 +132,37 @@ btnClear.addEventListener("click", function () {
 });
 
 // Style each brush icon
-btnRainbow.addEventListener("click", function () {
+
+// Rainbow Brush Listener
+btns[0].addEventListener("click", function () {
   rainbow = true;
-  btnRainbow.style.borderBottom = "0.3em solid #6CCCF5";
-  imgRainbow.classList.add("selected");
-  imgEraser.classList.remove("selected");
-  imgPaint.classList.remove("selected");
-  btnBrush.style.borderBottom = "none";
-  btnEraser.style.borderBottom = "none";
+  clearOtherBrushes();
+  btns[0].style.borderBottom = "0.3em solid #6CCCF5";
+  icons[0].classList.add("selected");
 });
 
-btnBrush.addEventListener("click", function () {
-  rainbow = false;
-  eraser = false;
-  notMainBrush();
+// Main Brush Listener
+btns[1].addEventListener("click", function () {
+  chooseMainBrush();
 });
 
-btnEraser.addEventListener("click", function () {
+// Eraser Listener
+btns[2].addEventListener("click", function () {
   rainbow = false;
   eraser = true;
-  btnEraser.style.borderBottom = "0.3em solid #6CCCF5";
-  btnBrush.style.borderBottom = "none";
-  btnRainbow.style.borderBottom = "none";
-  imgEraser.classList.add("selected");
-  imgPaint.classList.remove("selected");
-  imgRainbow.classList.remove("selected");
+  clearOtherBrushes();
+  btns[2].style.borderBottom = "0.3em solid #6CCCF5";
+  icons[2].classList.add("selected");
 });
 
+// Assign a new brush color from color palette
 colorPicker.addEventListener("change", function (e) {
   currentColor.style.backgroundColor = e.target.value;
   brushColor = e.target.value;
-  notMainBrush();
-  rainbow = false;
-  eraser = false;
+  chooseMainBrush();
 });
 
+// Assign new pixel size from pixel range input
 pixelRange.addEventListener("change", function (e) {
   pixelSize = e.target.value;
   gridContainer.style.gridTemplateColumns = `repeat(${pixelSize}, 1fr)`;
