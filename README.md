@@ -234,7 +234,7 @@ With the use of a simple loop to itinerate through the different color codes fro
 ## Additional Improvements
 
 - [x] Solve hover and focus btn while selecting and painting
-- [ ] Clean Code
+- [x] Clean Code
 - [x] Make the prompt only with a number between 1 and 81
 - [x] Add a color pickers
 - [x] Add a pixelSize bar slide

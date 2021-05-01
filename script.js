@@ -97,7 +97,7 @@ let newSquare = function () {
   const singleSquare = document.createElement("div");
   singleSquare.classList.add("square");
   singleSquare.style.backgroundColor = "white";
-  singleSquare.style.border = "1px solid #d6d8dd53";
+  singleSquare.style.border = "1px solid #eeeeee53";
   // Check for the brush when the mouse is over
   singleSquare.addEventListener("mouseover", function () {
     if (rainbow) {
