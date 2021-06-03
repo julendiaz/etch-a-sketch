@@ -2,7 +2,7 @@
 
 ![Frame 1portadagithub](images/gitportada.png)
 
-Go to the [Live Preview](https://shifujulen.github.io/etch-a-sketch/);
+Go to the [Live Preview](https://julendiaz.github.io/etch-a-sketch/);
 
 ## Table of contents
 
